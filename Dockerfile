@@ -1,7 +1,7 @@
 
 # s2i-builder-rpm
-#FROM openshift/base-centos7
-FROM centos/s2i-core-centos7
+FROM openshift/base-centos7
+#FROM centos/s2i-core-centos7
 
 # TODO: Put the maintainer name in the image metadata
 # MAINTAINER Your Name <your@email.com>
