@@ -1,8 +1,8 @@
 #!/bin/bash
 
 rpmdev-setuptree
-
 curl $SRC_RPM_LOCATION -o $SRC_RPM
+rpm -i $SRC_RPM
 
 rpmbuild --rebuild ./${SRC_RPM}
 
