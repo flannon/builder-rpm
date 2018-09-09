@@ -27,7 +27,7 @@ RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
 
 # TODO (optional): Copy the builder files into /opt/app-root
 # COPY ./<builder_folder>/ /opt/app-root/
-COPY ./rpmbuild.sh ${HOME}/rpmbuild.sh
+COPY ./build.sh ${HOME}/build.sh
 #COPY ./rpmbuild ${HOME}/rpmbuild
 #COPY ./git-2.14.2-2.fc27.src.rpm ${HOME}/git-2.14.2-2.fc27.src.rpm 
 
