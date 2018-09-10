@@ -1,7 +1,43 @@
 
-# Creating a basic S2I builder image  
+## Make a builder image to use with the OpenShift docker build strategy     
 
-## Getting started  
+### Description
+
+The build-rpm image provides an environment for building rpms when provided with the environment variables SRC_RPM and SRC_RPM_LOCATION.
+
+### Usage
+
+####	Make the builder image
+
+    oc new-build https://github.com/flannon/s2i-builder-rpm
+
+	When the build finishes it will create the image stream
+
+    oc get is
+
+  View the logs to monitor the ubild processes
+
+    oc logs -f bc/s2i-builder-rpm
+
+	To iterate on the build image run oc start build against the build config
+
+    oc start-build s2i-builder-rpm
+
+#### Build the application
+
+    oc new-app <is-name> -env=<env_vars>
+
+  To build the rpm you need to provide values for SRC_RPM and SRC_RPM_LOCATION, which define the location of the src rpm to build.
+
+  For example to build the most recent verison of git from the Fedora source tree to run on centos you can do the following,
+
+    oc new-app s2i-builder-rpm  --env=SRC_RPM=git-2.14.2-2.fc27.src.rpm --env=SRC_RPM_LOCATION=https://dl.fedoraproject.org/pub/fedora/linux/updates/testing/27/SRPMS/g/git-2.14.2-2.fc27.src.rpm
+
+  To view the  application's progress watch the deployment configuration log
+
+    oc get dc
+    oc logs -f dc/builder-rpm
+
 
 ### Files and Directories  
 | File                   | Required? | Description                                                  |
