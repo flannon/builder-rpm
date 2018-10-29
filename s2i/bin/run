@@ -9,5 +9,5 @@
 
 set -eo pipefail
 
-${HOME}/bin/uid_entrypoint.sh
+${HOME}/bin/getuid.sh
 exec ${HOME}/bin/build.sh
