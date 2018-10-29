@@ -18,7 +18,7 @@ LABEL io.k8s.description="Platform for building src rpms" \
 
 RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
     rpmlint make gcc mock epel-release && \ 
-    useradd -s /sbin/nologin mockbuild
+    useradd -s /sbin/nologin mockbuild && \
     # libs for git build
     yum install -y asciidoc cmlto emacs libsecret-devel pcre2-devel \ 
     pkgconfig bash-completion \
