@@ -22,6 +22,7 @@ RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
     pkgconfig bash-completion \
     python2-devel perl-ExtUtils-MakeMaker libgnome-keyring-devel xmlto \
     expat-devel libcurl-devel openssl-devel zlib-devel perl-Error \
+    mock \
     && yum clean all -y
 
 ### Setup user for build execution and application runtime
