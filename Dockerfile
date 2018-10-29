@@ -45,6 +45,6 @@ USER 1001
 WORKDIR ${APP_ROOT}
 
 ### user name recognition at runtime w/ an arbitrary uid - for OpenShift deployments
-ENTRYPOINT [ "bin/uid_entrypoint" ]
+#ENTRYPOINT [ "bin/uid_entrypoint" ]
 VOLUME ${APP_ROOT}/logs ${APP_ROOT}/data
 CMD ["/usr/libexec/s2i/run"]
