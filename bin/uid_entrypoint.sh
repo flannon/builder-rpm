@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Add default user to mock group
-usermod -a -G mock default
+#usermod -a -G mock default
+usermod -a -G mock $(id -u)
 
 # Add default uid to /etc/passwd
 if ! whoami &> /dev/null; then
