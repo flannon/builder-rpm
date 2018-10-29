@@ -14,7 +14,7 @@ LABEL io.k8s.description="Platform for building src rpms" \
       url="https://github.com/flannon/builder-rpm" \
       run='docker run -tdi --name ${NAME} \
       -u 12345 \
-      ${IMAGE}' \
+      ${IMAGE}' 
 
 RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
     rpmlint make gcc \ 
