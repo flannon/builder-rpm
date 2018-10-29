@@ -9,4 +9,4 @@
 
 set -eo pipefail
 
-exec ${HOME}/build.sh
+exec ${HOME}/bin/build.sh
