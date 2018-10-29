@@ -17,12 +17,17 @@ LABEL io.k8s.description="Platform for building src rpms" \
       ${IMAGE}' 
 
 RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
-    rpmlint make gcc \ 
+    rpmlint make gcc mock \ 
+    # libs for gi build
     asciidoc cmlto emacs libsecret-devel pcre2-devel \ 
     pkgconfig bash-completion \
     python2-devel perl-ExtUtils-MakeMaker libgnome-keyring-devel xmlto \
     expat-devel libcurl-devel openssl-devel zlib-devel perl-Error \
-    mock \
+    # libs for ansible build
+    python-setuptools PyYAML python-crypto python-paramiko \
+    python-keyczar python-nose python-coverage python-mock \
+    python-boto3 python-botocor python-passlib \
+    python-sphinx-theme-alabaster pytest python-jinja2 \
     && yum clean all -y
 
 ### Setup user for build execution and application runtime
