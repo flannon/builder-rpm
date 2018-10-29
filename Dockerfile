@@ -26,7 +26,7 @@ RUN yum install -y rpmdevtools.noarch rpm-build redhat-rpm-config \
     # libs for ansible build
     python-setuptools PyYAML python-crypto python-paramiko \
     python-keyczar python-nose python-coverage python-mock \
-    python-boto3 python-botocor python-passlib \
+    python-boto3 python2-botocore python-passlib \
     python-sphinx-theme-alabaster pytest python-jinja2 \
     && yum clean all -y
 
